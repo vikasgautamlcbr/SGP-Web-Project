@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap");
+
+:root {
+  color-scheme: dark;
+  --sgp-bg: #05070b;
+  --sgp-ink: #e6f6ff;
+  --sgp-border: rgba(255, 255, 255, 0.10);
+  --sgp-surface: rgba(255, 255, 255, 0.03);
+  --sgp-surface-2: rgba(0, 0, 0, 0.35);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--sgp-bg);
+  background-image:
+    radial-gradient(900px circle at 10% 10%, rgba(0, 255, 255, 0.14), transparent 55%),
+    radial-gradient(900px circle at 90% 20%, rgba(0, 255, 255, 0.10), transparent 55%),
+    radial-gradient(700px circle at 80% 90%, rgba(255, 255, 255, 0.05), transparent 60%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  background-attachment: fixed;
+  color: var(--sgp-ink);
+  font-family: "Afacad Flux", ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.065) 1px, transparent 1px),
+    radial-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 18px 18px, 26px 26px;
+  background-position: 0 0, 10px 12px;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: -18%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(900px circle at 20% 20%, rgba(0, 255, 255, 0.14), transparent 60%),
+    radial-gradient(800px circle at 80% 30%, rgba(0, 255, 255, 0.10), transparent 62%),
+    radial-gradient(900px circle at 50% 90%, rgba(255, 255, 255, 0.06), transparent 65%);
+  filter: blur(30px);
+  opacity: 0.55;
+  transform: translate3d(0, 0, 0);
+  animation: sgpf-aurora 22s ease-in-out infinite;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sgp-cursor-dot,
+.sgp-cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0;
+  transform: translate3d(-40px, -40px, 0);
+  transition: opacity 180ms ease;
+}
+
+.sgp-cursor-visible {
+  opacity: 1;
+}
+
+.sgp-cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  margin-top: -4px;
+  border-radius: 999px;
+  background: rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.25), 0 0 18px rgba(0, 255, 255, 0.25);
+}
+
+.sgp-cursor-ring {
+  width: 44px;
+  height: 44px;
+  margin-left: -22px;
+  margin-top: -22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.12), rgba(0, 0, 0, 0) 65%);
+  backdrop-filter: blur(8px);
+  transition:
+    opacity 180ms ease,
+    width 160ms ease,
+    height 160ms ease,
+    margin-left 160ms ease,
+    margin-top 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+  box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.10);
+}
+
+.sgp-cursor-ring.sgp-cursor-interactive {
+  width: 56px;
+  height: 56px;
+  margin-left: -28px;
+  margin-top: -28px;
+  border-color: rgba(0, 255, 255, 0.28);
+  box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.22), 0 0 28px rgba(0, 255, 255, 0.14);
+}
+
+.sgp-cursor-dot.sgp-cursor-interactive {
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+
+.sgp-cursor-ring.sgp-cursor-pressed {
+  width: 36px;
+  height: 36px;
+  margin-left: -18px;
+  margin-top: -18px;
+  border-color: rgba(0, 255, 255, 0.38);
+  box-shadow: 0 0 0 1px rgba(0, 255, 255, 0.28), 0 0 34px rgba(0, 255, 255, 0.18);
+}
+
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  a,
+  button,
+  [role="button"],
+  input,
+  textarea,
+  select,
+  summary,
+  label {
+    cursor: none;
+  }
+}
+
+::selection {
+  background: rgba(0, 255, 255, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.20);
+}
+
+@keyframes sgpf-enter {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes sgpf-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes sgpf-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -10px, 0) scale(1.03);
+  }
+}
+
+@keyframes sgpf-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sgpf-aurora {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(30px);
+  }
+  50% {
+    transform: translate3d(28px, -18px, 0) scale(1.04);
+    filter: blur(34px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body::after {
+    animation: none;
+  }
+}
+
+@layer utilities {
+  .bg-aurora-edge {
+    background-image:
+      linear-gradient(135deg, rgba(0, 255, 255, 0.10), transparent 40%),
+      radial-gradient(700px circle at 10% 0%, rgba(255, 255, 255, 0.05), transparent 60%);
+  }
+
+  .bg-aurora-portfolio {
+    background-image:
+      radial-gradient(900px circle at 20% 20%, rgba(0, 255, 255, 0.12), transparent 55%),
+      radial-gradient(900px circle at 80% 0%, rgba(255, 255, 255, 0.05), transparent 60%);
+  }
+
+  .bg-aurora-team {
+    background-image:
+      radial-gradient(900px circle at 15% 15%, rgba(255, 255, 255, 0.05), transparent 60%),
+      radial-gradient(1000px circle at 70% 20%, rgba(0, 255, 255, 0.10), transparent 60%),
+      radial-gradient(900px circle at 80% 90%, rgba(0, 255, 255, 0.06), transparent 65%);
+  }
+}
