@@ -14,7 +14,7 @@ type HeroAction = {
 type HeroSectionProps = {
   eyebrow?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
   actions?: HeroAction[];
   right?: React.ReactNode;
   size?: "default" | "xl";
@@ -63,9 +63,13 @@ export function HeroSection({
             </h1>
 
             {subtitle ? (
-              <p className="text-pretty text-base leading-relaxed text-slate-200 md:text-lg">
-                {subtitle}
-              </p>
+              typeof subtitle === "string" ? (
+                <p className="text-pretty text-base leading-relaxed text-slate-200 md:text-lg">
+                  {subtitle}
+                </p>
+              ) : (
+                <div className="space-y-3">{subtitle}</div>
+              )
             ) : null}
 
             {actions?.length ? (

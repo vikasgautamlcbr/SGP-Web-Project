@@ -23,10 +23,10 @@ const featuredCompanies = [
     sector: "eDiscovery",
     group: "Platform" as const,
     status: "Active" as const,
-    description: "eDiscovery Software Platform",
+    description: "AI-powered eDiscovery built for modern legal teams.",
     metrics: [
-      { label: "Focus", value: "GTM + product" },
-      { label: "Add-ons", value: "Potential" }
+      { label: "Current Platform", value: "eDiscovery Software" },
+      { label: "Focus", value: "Enterprise GTM · Talent · Product acceleration" }
     ]
   },
   {
@@ -36,10 +36,10 @@ const featuredCompanies = [
     sector: "Integration",
     group: "Platform" as const,
     status: "Active" as const,
-    description: "Intelligence From Integration",
+    description: "Bringing visibility to enterprise messaging infrastructure.",
     metrics: [
-      { label: "Focus", value: "Positioning" },
-      { label: "Expansion", value: "Enterprise" }
+      { label: "Current Platform", value: "Integration & Middleware Intelligence" },
+      { label: "Focus", value: "Market expansion · Product depth · Channel strategy" }
     ]
   },
   {
@@ -49,10 +49,10 @@ const featuredCompanies = [
     sector: "Reputation",
     group: "Platform" as const,
     status: "Active" as const,
-    description: "Experience & Reputation Platform",
+    description: "Building the standard for service quality in professional services.",
     metrics: [
-      { label: "Focus", value: "Growth execution" },
-      { label: "Add-ons", value: "Active" }
+      { label: "Current Platform", value: "B2B Ratings & Reviews" },
+      { label: "Add-on", value: "ClientSavvy to deepen client intelligence" }
     ]
   }
 ];
@@ -187,11 +187,11 @@ export default function PortfolioPage() {
     <>
       <HeroSection
         eyebrow="PORTFOLIO"
-        title="Platforms, add-ons, and outcomes"
-        subtitle="A software portfolio built to compound value through GTM execution, product strategy, and disciplined tuck-ins."
+        title="Built Alongside Founders. Not Just Funded."
+        subtitle="From first capital to scaled platforms, these are the companies we’ve helped build, expand, and evolve."
         actions={[
-          { label: "Investment Focus", href: "/investment-focus", variant: "primary" },
-          { label: "Contact us", href: "/contact", variant: "secondary" }
+          { label: "Talk to Us", href: "/contact", variant: "primary" },
+          { label: "Investment Focus", href: "/investment-focus", variant: "secondary" }
         ]}
       />
 
@@ -199,13 +199,13 @@ export default function PortfolioPage() {
         <div className="container py-16">
           <div className="space-y-2">
             <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
-              SELECT PLATFORMS
+              CURRENT INVESTMENTS
             </p>
             <h2 className="text-2xl font-semibold text-white md:text-3xl">
-              Platforms with execution-led growth
+              Current platforms
             </h2>
             <p className="max-w-3xl text-sm leading-relaxed text-slate-200 md:text-base">
-              A few representative platforms. The work is always the same: align on the plan, build the cadence, and execute.
+              Built alongside founders, supported through product, go-to-market, talent, and M&A.
             </p>
           </div>
 
@@ -377,10 +377,9 @@ export default function PortfolioPage() {
       </section>
 
       <CTASection
-        title="Want to talk through a plan?"
-        description="Submit a pitch. If there’s fit, we’ll follow up quickly with clear next steps."
-        primaryAction={{ label: "Contact us", href: "/contact" }}
-        secondaryAction={{ label: "View Insights", href: "/blog" }}
+        title="Ready for what comes next?"
+        description="A focused conversation with a quick decision, and no wasted time."
+        primaryAction={{ label: "Get in Touch", href: "/contact" }}
       />
     </>
   );

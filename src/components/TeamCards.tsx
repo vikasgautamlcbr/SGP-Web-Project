@@ -35,7 +35,7 @@ export function TeamCards({ members }: TeamCardsProps) {
                 </h3>
                 <p className="text-sm text-slate-300">{member.role}</p>
               </div>
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10 text-accent">
+              <div className="sgpf-icon-tile sgpf-icon-tile-sm text-accent">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
               </div>
             </div>
@@ -51,7 +51,9 @@ export function TeamCards({ members }: TeamCardsProps) {
                 href={`mailto:${member.email}`}
                 className="mt-5 inline-flex items-center gap-2 text-sm text-slate-200 transition hover:text-white"
               >
-                <Mail className="h-4 w-4 text-accent" />
+                <span className="sgpf-icon-tile sgpf-icon-tile-sm">
+                  <Mail className="h-4 w-4" />
+                </span>
                 {member.email}
               </a>
             ) : null}

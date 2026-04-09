@@ -5,10 +5,10 @@ export default function ContactPage() {
     <>
       <HeroSection
         eyebrow="CONTACT"
-        title="Submit a Pitch"
-        subtitle="Share a quick overview. If there’s fit, we’ll respond quickly with clear next steps."
+        title="Let’s Talk About What’s Next."
+        subtitle="Let’s have a clear and direct conversation about your business and what comes next."
         actions={[
-          { label: "View Portfolio", href: "/portfolio", variant: "secondary" },
+          { label: "See Our Portfolio", href: "/portfolio", variant: "secondary" },
           { label: "Investment Focus", href: "/investment-focus", variant: "primary" }
         ]}
       />
@@ -23,16 +23,31 @@ export default function ContactPage() {
             >
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="space-y-2">
-                  <span className="text-sm font-medium text-slate-200">Name</span>
+                  <span className="text-sm font-medium text-slate-200">
+                    Company Name
+                  </span>
                   <input
-                    name="name"
+                    name="companyName"
                     className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
-                    placeholder="Your name"
+                    placeholder="Company Name"
                   />
                 </label>
 
                 <label className="space-y-2">
-                  <span className="text-sm font-medium text-slate-200">Email</span>
+                  <span className="text-sm font-medium text-slate-200">
+                    Your Name & Title
+                  </span>
+                  <input
+                    name="nameTitle"
+                    className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+                    placeholder="Your Name & Title"
+                  />
+                </label>
+
+                <label className="space-y-2">
+                  <span className="text-sm font-medium text-slate-200">
+                    Email
+                  </span>
                   <input
                     name="email"
                     type="email"
@@ -42,38 +57,33 @@ export default function ContactPage() {
                 </label>
               </div>
 
-              <div className="mt-4 grid gap-4 md:grid-cols-2">
-                <label className="space-y-2">
-                  <span className="text-sm font-medium text-slate-200">
-                    Company
-                  </span>
-                  <input
-                    name="company"
-                    className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
-                    placeholder="Company name"
-                  />
-                </label>
-
-                <label className="space-y-2">
-                  <span className="text-sm font-medium text-slate-200">
-                    Website
-                  </span>
-                  <input
-                    name="website"
-                    className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
-                    placeholder="https://"
-                  />
-                </label>
-              </div>
+              <label className="mt-4 block space-y-2">
+                <span className="text-sm font-medium text-slate-200">
+                  What you’re looking for
+                </span>
+                <select
+                  name="interest"
+                  className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Select one
+                  </option>
+                  <option value="buyout">Buyout</option>
+                  <option value="recap">Recap</option>
+                  <option value="minority-growth-investment">Minority Growth Investment</option>
+                  <option value="still-figuring-it-out">Still Figuring It Out</option>
+                </select>
+              </label>
 
               <label className="mt-4 block space-y-2">
                 <span className="text-sm font-medium text-slate-200">
-                  Pitch / Notes
+                  Additional Information (if any)
                 </span>
                 <textarea
-                  name="message"
+                  name="additionalInfo"
                   className="min-h-[160px] w-full resize-y rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
-                  placeholder="Share your business, traction, and what you're looking for..."
+                  placeholder="Additional Information (if any)"
                 />
               </label>
 
@@ -81,7 +91,7 @@ export default function ContactPage() {
                 type="button"
                 className="mt-6 rounded-full border border-accent/50 bg-accent/15 px-6 py-3 text-sm font-medium text-white transition hover:border-accent/80 hover:bg-accent/20"
               >
-                Contact us
+                Submit
               </button>
             </form>
           </div>
@@ -89,45 +99,22 @@ export default function ContactPage() {
           <div className="space-y-4">
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
               <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
-                WHAT TO EXPECT
+                PREFER TO REACH OUT DIRECTLY?
               </p>
               <h2 className="mt-2 text-lg font-semibold text-white">
-                Clear process
-              </h2>
-              <div className="mt-5 grid gap-2">
-                {[
-                  "Submit a short overview, traction, and what you’re looking for",
-                  "We review internally against thesis and fit",
-                  "We follow up quickly if there’s alignment",
-                  "We set a clear next step (call, diligence, or pass)"
-                ].map((step, index) => (
-                  <div
-                    key={step}
-                    className="flex items-start gap-3 rounded-2xl border border-white/10 bg-black/25 px-4 py-3"
-                  >
-                    <span className="mt-1 text-xs font-semibold tracking-[0.22em] text-accent/80">
-                      {index + 1}
-                    </span>
-                    <p className="text-sm text-slate-200">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
-              <h2 className="text-lg font-semibold text-white">
-                What to include
+                Software Growth Partners
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-200">
-                Business summary, customer outcomes, ARR/retention, and how you’re thinking about growth levers.
+                530 Lytton Ave, 2nd Floor
+                <br />
+                Palo Alto, CA 94301
               </p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
-              <h2 className="text-lg font-semibold text-white">Office Locations</h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-200">
-                Remote-first collaboration with portfolio teams.
-              </p>
+              <a
+                href="mailto:info@softwaregrowthpartners.com"
+                className="mt-4 inline-flex text-sm font-semibold text-slate-200 transition hover:text-white"
+              >
+                info@softwaregrowthpartners.com
+              </a>
             </div>
           </div>
           </div>

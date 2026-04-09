@@ -159,6 +159,68 @@ body > * {
   }
 }
 
+@keyframes sgpf-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.sgpf-ticker {
+  overflow: hidden;
+}
+
+.sgpf-ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: max-content;
+  animation: sgpf-ticker 28s linear infinite;
+}
+
+.sgpf-no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sgpf-no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.sgpf-icon-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  color: rgb(0, 255, 255);
+  box-shadow: inset 0 0 0 1px rgba(0, 255, 255, 0.08);
+}
+
+.sgpf-icon-tile-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 14px;
+}
+
+.sgpf-icon-tile-lg {
+  width: 48px;
+  height: 48px;
+}
+
+.sgpf-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.sgpf-details summary::marker {
+  content: "";
+}
+
 ::selection {
   background: rgba(0, 255, 255, 0.25);
 }

@@ -12,6 +12,11 @@ import CloudMonixLogo from "./portfolio/company logos/CloudMonix-Logo.jpg";
 import MeshIQLogo from "./portfolio/company logos/meshIQ.jpg";
 import StackifyLogo from "./portfolio/company logos/Stackify-Logo-nw.jpg";
 import VenioLogo from "./portfolio/company logos/venio.jpg";
+import AppsianLogo from "./portfolio/company logos/Appsian.jpg";
+import XpandionLogo from "./portfolio/company logos/Xpandion-Logo.jpg";
+import CleoLogo from "./portfolio/company logos/cleo.jpg";
+import NetreoLogo from "./portfolio/company logos/natreo.jpg";
+import ExtolLogo from "./portfolio/company logos/Extol-Logo.jpg";
 import AndrewImg from "./team/member images/Andrew.jpg";
 import DevanshImg from "./team/member images/devansh.jpg";
 import SreenathImg from "./team/member images/Sreenath.jpg";
@@ -28,47 +33,65 @@ const edge = [
   {
     id: "edge-1",
     icon: Building2,
-    title: "Growth equity, built for operators",
-    body: "We invest in B2B software and partner closely with management teams to scale go-to-market and build durable platforms."
+    title: "You’re the focus, not one of many",
+    body: "We invest in a small number of companies and go deep. You get attention, context, and real partnership—not portfolio management."
   },
   {
     id: "edge-2",
     icon: Code2,
-    title: "Software-only, thesis-driven",
-    body: "Mission-critical workflows, clear customer ROI, and strong product foundations with room to sharpen positioning and execution."
+    title: "Operators, not observers",
+    body: "We’ve built and scaled software companies ourselves. So when we engage, it’s execution—not theory."
   },
   {
     id: "edge-3",
+    icon: Clock,
+    title: "Fast decisions. No wasted cycles.",
+    body: "A clear yes or no in 48 hours. We don’t drag out processes that take you away from running your business."
+  },
+  {
+    id: "edge-4",
     icon: BriefcaseBusiness,
-    title: "Platform + add-on strategy",
-    body: "We build compounding value with disciplined tuck-ins, integration planning, and repeatable value capture."
+    title: "Built to scale, not to flip",
+    body: "No forced timelines. No pressure to exit early. We stay aligned until the outcome is right for the company."
   }
 ];
 
 const investmentCriteria = [
   {
     id: "crit-1",
-    icon: ChartNoAxesCombined,
-    title: "Clear GTM expansion",
-    body: "Pricing/packaging, enterprise motion, and a repeatable revenue engine."
+    icon: Code2,
+    title: "Built by operators, not just investors",
+    body: "We’ve been in your seat—actually. From product to sales to scaling teams, we bring real experience, not secondhand advice."
   },
   {
     id: "crit-2",
-    icon: Code2,
-    title: "Product depth",
-    body: "A strong core product with roadmap leverage and optional AI-enabled workflows."
+    icon: ChartNoAxesCombined,
+    title: "The right partner for your stage",
+    body: "You’ve built something real—profitable, growing, and proven. We focus on software companies in the $2M–$30M range, where the next stage matters most."
   },
   {
     id: "crit-3",
     icon: Building2,
-    title: "Enduring customers",
-    body: "Retention, mission-critical use cases, and switching costs that compound."
+    title: "A process built around your time",
+    body: "A clear yes or no in 48 hours. A focused path to close, without months of distraction."
   },
   {
     id: "crit-4",
     icon: BriefcaseBusiness,
-    title: "Add-on runway",
-    body: "A platform footprint where tuck-ins expand product breadth and distribution."
+    title: "Aligned for long-term outcomes",
+    body: "We don’t invest to exit—we invest to build. No artificial timelines. No pressure to sell early."
+  },
+  {
+    id: "crit-5",
+    icon: Sparkles,
+    title: "Growth beyond organic expansion",
+    body: "We help companies scale through strategic acquisitions. From sourcing to integration, we execute M&A that drives real growth."
+  },
+  {
+    id: "crit-6",
+    icon: Code2,
+    title: "Focused only on software businesses",
+    body: "No generalist playbooks. No cross-industry guesswork. Every insight comes from working inside software companies."
   }
 ];
 
@@ -234,69 +257,85 @@ const insightsPreview = [
   }
 ];
 
-const featuredPortfolio = [
-  {
-    id: "feat-venio",
-    name: "Venio Systems",
-    logo: VenioLogo,
-    type: "Platform",
-    note: "eDiscovery software platform.",
-    outcome: "Platform"
-  },
-  {
-    id: "feat-meshiq",
-    name: "MeshIQ",
-    logo: MeshIQLogo,
-    type: "Platform",
-    note: "Intelligence from integration.",
-    outcome: "Platform"
-  },
-  {
-    id: "feat-clearlyrated",
-    name: "ClearlyRated",
-    logo: ClearlyRatedLogo,
-    type: "Platform",
-    note: "Experience & reputation platform.",
-    outcome: "Platform"
-  },
-  {
-    id: "feat-clientsavvy",
-    name: "ClientSavvy",
-    logo: ClientSavvyLogo,
-    type: "Add-on",
-    note: "Acquired by ClearlyRated — 2025.",
-    outcome: "Acquired"
-  },
-  {
-    id: "feat-stackify",
-    name: "Stackify",
-    logo: StackifyLogo,
-    type: "Add-on",
-    note: "Acquired by Netreo — 2021.",
-    outcome: "Acquired"
-  },
-  {
-    id: "feat-cloudmonix",
-    name: "CloudMonix",
-    logo: CloudMonixLogo,
-    type: "Add-on",
-    note: "Acquired by Netreo — 2020.",
-    outcome: "Acquired"
-  }
-];
-
 export default function HomePage() {
   const blogImages = [BlogImg1, BlogImg2, BlogImg3, BlogImg4, BlogImg5];
+  const logoTicker = [
+    { img: VenioLogo, name: "Venio Systems" },
+    { img: MeshIQLogo, name: "MeshIQ" },
+    { img: ClearlyRatedLogo, name: "ClearlyRated" },
+    { img: ClientSavvyLogo, name: "ClientSavvy" },
+    { img: CloudMonixLogo, name: "CloudMonix" },
+    { img: StackifyLogo, name: "Stackify" },
+    { img: AppsianLogo, name: "Appsian" },
+    { img: XpandionLogo, name: "Xpandion" },
+    { img: CleoLogo, name: "Cleo" },
+    { img: NetreoLogo, name: "Netreo" }
+  ];
+  const portfolioGroups = [
+    {
+      key: "current",
+      title: "Current Platforms",
+      tag: "Current",
+      items: [
+        {
+          name: "Venio Systems",
+          logo: VenioLogo,
+          meta: ["eDiscovery Software", "Enterprise GTM · Talent · Product acceleration"]
+        },
+        {
+          name: "MeshIQ",
+          logo: MeshIQLogo,
+          meta: ["Integration & Middleware Intelligence", "Market expansion · Product depth · Channel strategy"]
+        },
+        {
+          name: "ClearlyRated",
+          logo: ClearlyRatedLogo,
+          meta: ["B2B Ratings & Reviews", "Platform consolidation · Enterprise growth · Brand authority"]
+        }
+      ]
+    },
+    {
+      key: "addons",
+      title: "Add-ons",
+      tag: "Add-on",
+      items: [
+        { name: "ClientSavvy", logo: ClientSavvyLogo, meta: ["Acquired by ClearlyRated — 2025"] },
+        { name: "CloudMonix", logo: CloudMonixLogo, meta: ["Acquired by Netreo — 2020"] },
+        { name: "Stackify", logo: StackifyLogo, meta: ["Acquired by Netreo — 2021"] },
+        { name: "Xpandion", logo: XpandionLogo, meta: ["Acquired by Appsian — 2021"] },
+        { name: "Extol", logo: ExtolLogo, meta: ["Acquired by Cleo — 2016"] }
+      ]
+    },
+    {
+      key: "prior",
+      title: "Prior Investments",
+      tag: "Prior",
+      items: [
+        { name: "Cleo", logo: CleoLogo, meta: ["B2B Integration Platform"] },
+        { name: "Appsian", logo: AppsianLogo, meta: ["ERP Security & UX (now Pathlock)"] },
+        { name: "Netreo", logo: NetreoLogo, meta: ["IT Monitoring & Observability", "Acquired by BMC Software"] }
+      ]
+    }
+  ] as const;
   return (
     <>
       <HeroSection
         size="xl"
         rightParallax
-        title={"Investing in Teams\nBuilding the Future of Software"}
-        subtitle="We partner with growth-stage software companies to scale go-to-market, strengthen product strategy, execute add-on acquisitions, and build long-term enterprise value."
+        title="The Right Partner for What Comes After Product-Market Fit"
+        subtitle={
+          <>
+            <p className="text-pretty text-lg font-semibold tracking-tight text-white/90 md:text-xl">
+              Scale What’s Already Working with the Right Operators
+            </p>
+            <p className="text-pretty text-base leading-relaxed text-slate-200 md:text-lg">
+              Led by software operators who’ve built and scaled companies before, so every conversation starts with context and not just theory.
+            </p>
+          </>
+        }
         actions={[
-          { label: "View Portfolio", href: "/portfolio", variant: "primary" },
-          { label: "Contact us", href: "/contact", variant: "secondary" }
+          { label: "Talk to Us", href: "/contact", variant: "primary" },
+          { label: "See Our Portfolio", href: "/portfolio", variant: "secondary" }
         ]}
         right={
           <div className="relative h-[320px] w-[320px] md:h-[420px] md:w-[420px]">
@@ -333,57 +372,64 @@ export default function HomePage() {
         }
       />
 
+      <section className="relative border-y border-white/10 bg-white">
+        <div className="container py-4">
+          <p className="text-center text-[11px] font-semibold tracking-[0.30em] text-slate-700">
+            PLATFORMS • ADD-ONS • PRIOR INVESTMENTS
+          </p>
+        </div>
+        <div className="sgpf-ticker pb-6">
+          <div className="sgpf-ticker-track">
+            {[...logoTicker, ...logoTicker].map((l, idx) => (
+              <div key={`${l.name}-${idx}`} className="flex items-center justify-center px-3">
+                <div className="h-14 md:h-16 w-auto">
+                  <Image src={l.img} alt={l.name} width={220} height={64} className="h-14 md:h-16 w-auto object-contain" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden border-b border-white/10 py-16">
         <div className="pointer-events-none absolute inset-0 z-0 bg-aurora-edge" />
         <div className="container relative z-10">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <div className="space-y-4 lg:self-center">
+            <div className="space-y-4 text-center lg:self-center lg:text-left">
               <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
-                THE EDGE
+                WHY SGP
               </p>
               <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
-                A modern growth equity approach
+                Why Founders Choose SGP
               </h2>
-              <p className="max-w-xl text-sm leading-relaxed text-slate-200 md:text-lg">
-                Thesis-led investing, operator-grade execution, and disciplined add-ons—built to compound value over time.
+              <p className="mx-auto max-w-xl text-sm leading-relaxed text-slate-200 md:text-lg lg:mx-0">
+                The partner you choose at this stage doesn’t just influence growth—it defines it.
               </p>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {["Thesis-led", "Cadence-driven", "Outcome-first"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-white/10 bg-black/25 px-4 py-2 text-xs font-semibold text-slate-200"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
 
-            <div className="grid gap-4 lg:self-center lg:my-auto">
-              {edge.map((item, index) => (
-                <div
-                  key={item.id}
-                  className={[
-                    "rounded-[34px] border border-white/10 bg-white/[0.03] p-7 transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]",
-                    index === 1 ? "lg:translate-x-6" : "",
-                    index === 2 ? "lg:translate-x-12" : ""
-                  ].join(" ")}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10">
-                      <item.icon className="h-5 w-5 text-accent" />
+            <div className="lg:self-center lg:my-auto">
+              <div className="rounded-[44px] bg-black/10 p-2">
+                <div className="divide-y divide-white/10 overflow-hidden rounded-[40px] border border-white/10 bg-black/25">
+                  {edge.map((item) => (
+                    <div
+                      key={item.id}
+                      className="group flex items-start gap-4 px-6 py-6 transition hover:bg-white/[0.03]"
+                    >
+                      <div className="sgpf-icon-tile sgpf-icon-tile-lg">
+                        <item.icon className="h-5 w-5 text-accent" />
+                      </div>
+                      <div className="min-w-0 pt-0.5 text-left">
+                        <p className="text-base font-semibold tracking-tight text-white">
+                          {item.title}
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                          {item.body}
+                        </p>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <p className="text-base font-semibold tracking-tight text-white">
-                        {item.title}
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-slate-200">
-                        {item.body}
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
@@ -392,76 +438,83 @@ export default function HomePage() {
       <section className="relative">
         <div className="pointer-events-none absolute -right-40 top-10 z-0 h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl opacity-50 [animation:sgpf-drift_26s_ease-in-out_infinite]" />
         <div className="container relative z-10 py-20 md:py-24">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-            <div className="space-y-6">
+          <div className="grid gap-10 lg:grid-cols-3 lg:items-start">
+            <div className="order-2 space-y-5 lg:order-1 lg:pt-16">
+              {investmentCriteria.slice(0, 3).map((item) => (
+                <div key={item.id} className="flex items-start gap-4">
+                  <div className="sgpf-icon-tile mt-0.5">
+                    <item.icon className="h-5 w-5 text-accent/80" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-white md:text-base">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                      {item.body}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="order-1 space-y-6 text-center lg:order-2 lg:pt-8">
               <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
-                STRATEGY
+                VALUE PROPOSITIONS
               </p>
               <h2 className="text-3xl font-semibold tracking-tight text-white md:text-6xl">
-                Underwrite the plan.
-                <span className="text-accent/90"> Build the cadence.</span>
+                What You Get With SGP
               </h2>
-              <p className="max-w-xl text-sm leading-relaxed text-slate-200 md:text-lg">
-                We focus on software platforms where a clear operating plan and disciplined execution can compound enterprise value.
+              <p className="mx-auto max-w-xl text-sm leading-relaxed text-slate-200 md:text-lg">
+                What sets us apart shows up in how we work with you, not around you.
               </p>
 
-              <div className="grid gap-3 sm:grid-cols-3">
+              <div className="flex flex-wrap justify-center gap-2">
                 {[
-                  { label: "Focus", value: "B2B software" },
-                  { label: "Model", value: "Growth equity" },
-                  { label: "Playbook", value: "Execution-led" }
+                  { label: "Decision", value: "48 hours" },
+                  { label: "Stage", value: "$2M–$30M" },
+                  { label: "Focus", value: "B2B software" }
                 ].map((stat) => (
-                  <div
+                  <span
                     key={stat.label}
-                    className="rounded-[24px] border border-white/10 bg-white/[0.03] px-4 py-4 transition hover:border-white/20 hover:bg-white/[0.05]"
+                    className="rounded-full border border-white/10 bg-black/25 px-4 py-2 text-xs font-semibold text-slate-200"
                   >
-                    <p className="text-[11px] font-semibold tracking-[0.22em] text-slate-400">
-                      {stat.label}
-                    </p>
-                    <p className="mt-2 text-sm font-semibold text-white">{stat.value}</p>
-                    <div className="mt-3 h-1 w-10 rounded-full bg-accent/50" />
-                  </div>
+                    <span className="text-slate-400">{stat.label}:</span> {stat.value}
+                  </span>
                 ))}
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-3 pt-2">
+                <Link
+                  href="/contact"
+                  className="rounded-full border border-accent/40 bg-accent/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-accent/70 hover:bg-accent/20 hover:shadow-glow"
+                >
+                  Talk to Us
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/10"
+                >
+                  See Our Portfolio
+                </Link>
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-[44px] border border-white/10 bg-white/[0.03] p-8 transition hover:border-white/20 hover:bg-white/[0.05] md:p-10">
-              <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(600px_circle_at_50%_0,rgba(0,255,255,0.12),transparent_60%)]" />
-              <div className="relative z-10">
-                <p className="text-xs font-semibold tracking-[0.25em] text-slate-400">
-                  IDEAL PARTNER PROFILE
-                </p>
-              </div>
-              <div className="relative z-10 mt-6 grid gap-4">
-                {investmentCriteria.map((item) => (
-                  <div key={item.id} className="flex items-start gap-4">
-                    <div className="mt-1 flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/25">
-                      <item.icon className="h-5 w-5 text-accent/80" />
-                    </div>
-                    <div className="w-full">
-                      <p className="text-base font-semibold text-white">{item.title}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-slate-200">
-                        {item.body}
-                      </p>
-                      <div className="mt-4 h-px w-full bg-white/10" />
-                    </div>
+            <div className="order-3 space-y-5 lg:pt-16">
+              {investmentCriteria.slice(3).map((item) => (
+                <div key={item.id} className="flex items-start gap-4">
+                  <div className="sgpf-icon-tile mt-0.5">
+                    <item.icon className="h-5 w-5 text-accent/80" />
                   </div>
-                ))}
-              </div>
-              <div className="relative z-10 mt-6 flex flex-wrap gap-3">
-                <Link
-                  href="/investment-focus"
-                  className="rounded-full border border-accent/40 bg-accent/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-accent/70 hover:bg-accent/20 hover:shadow-glow"
-                >
-                  View Strategy
-                </Link>
-                <Link
-                  href="/contact"
-                  className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/10"
-                >
-                  Contact us
-                </Link>
-              </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-white md:text-base">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                      {item.body}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -472,98 +525,213 @@ export default function HomePage() {
         title="A repeatable playbook for software growth"
         subtitle="We partner with management teams to build the operating system: GTM engine, product strategy, talent, and add-ons."
         items={valueCreationModules}
+        align="center"
+        variant="panel"
       />
 
       <section className="relative overflow-hidden border-y border-white/10 bg-black/30">
         <div className="pointer-events-none absolute inset-0 z-0 bg-aurora-portfolio" />
         <div className="pointer-events-none absolute -left-48 top-14 z-0 h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl opacity-60 [animation:sgpf-drift_28s_ease-in-out_infinite]" />
         <div className="container relative z-10 py-20 md:py-24">
-          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <div className="space-y-3">
-              <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
-                PORTFOLIO
-              </p>
-              <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
-                A portfolio built to compound
-              </h2>
-              <p className="max-w-2xl text-sm leading-relaxed text-slate-200 md:text-base">
-                Platforms, add-ons, and outcomes across the software lifecycle.
-              </p>
-            </div>
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 self-start rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/10 md:self-auto"
-            >
-              Explore Portfolio <span className="text-accent">→</span>
-            </Link>
-          </div>
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            <div className="relative overflow-hidden rounded-[56px] border border-white/10 bg-white/[0.02]">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_circle_at_22%_20%,rgba(0,255,255,0.18),transparent_58%),radial-gradient(900px_circle_at_80%_40%,rgba(255,255,255,0.06),transparent_60%),radial-gradient(rgba(255,255,255,0.10)_1px,transparent_1px)] [background-size:auto,auto,18px_18px] opacity-[0.10]" />
+              <div className="relative min-h-[520px] p-10 md:min-h-[560px]">
+                <div className="pointer-events-none absolute -left-48 top-10 h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl opacity-70" />
+                <div className="pointer-events-none absolute -right-48 bottom-10 h-[520px] w-[520px] rounded-full bg-white/5 blur-3xl opacity-60" />
 
-          <div className="mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-            {featuredPortfolio.map((company) => (
-              <Link
-                key={`${company.id}-logo`}
-                href="/portfolio"
-                className="flex shrink-0 snap-start items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-white/20 hover:bg-white/[0.05]"
-              >
-                <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-black/25">
-                  <Image src={company.logo} alt={company.name} className="h-full w-full object-contain p-0.5" />
-                </div>
-                <span className="text-xs font-semibold text-slate-200">{company.name}</span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {featuredPortfolio.slice(0, 3).map((company, index) => (
-              <div
-                key={company.id}
-                className={[
-                  "group relative overflow-hidden border border-white/10 bg-white/[0.03] transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]",
-                  index === 0 ? "rounded-[44px] p-10 md:col-span-2" : "rounded-[32px] p-8"
-                ].join(" ")}
-              >
-                <div className="pointer-events-none absolute -right-24 -top-24 h-[320px] w-[320px] rounded-full bg-accent/10 blur-3xl opacity-40 transition group-hover:opacity-65" />
-                <div className="relative flex items-start justify-between gap-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-                      <Image
-                        src={company.logo}
-                        alt={company.name}
-                        className="h-full w-full object-contain p-1.5"
-                      />
-                    </div>
-                    <div className="min-w-0">
-                      <p className={index === 0 ? "truncate text-2xl font-semibold tracking-tight text-white" : "truncate text-lg font-semibold tracking-tight text-white"}>
-                        {company.name}
-                      </p>
-                      <p className="mt-1 text-xs font-semibold tracking-[0.22em] text-slate-400">
-                        {company.type}
-                      </p>
-                    </div>
-                  </div>
-                  <span className="shrink-0 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-semibold text-white">
-                    {company.outcome}
-                  </span>
-                </div>
-                <p className={index === 0 ? "relative mt-6 max-w-2xl text-sm leading-relaxed text-slate-200 md:text-base" : "relative mt-5 text-sm leading-relaxed text-slate-200"}>
-                  {company.note}
-                </p>
-                {index === 0 ? (
-                  <div className="relative mt-8 grid gap-3 sm:grid-cols-3">
-                    {[
-                      { label: "Playbook", value: "Execution-led" },
-                      { label: "Focus", value: "Platform building" },
-                      { label: "Add-ons", value: "Disciplined" }
-                    ].map((kpi) => (
-                      <div key={kpi.label} className="rounded-2xl border border-white/10 bg-black/25 px-4 py-3">
-                        <p className="text-xs text-slate-300">{kpi.label}</p>
-                        <p className="mt-1 text-sm font-semibold text-white">{kpi.value}</p>
+                <div className="relative mt-2 lg:hidden">
+                  <div className="grid gap-4">
+                    {portfolioGroups.map((group) => (
+                      <div key={group.key} className="rounded-[44px] border border-white/10 bg-black/50 p-8 backdrop-blur">
+                        <div className="flex items-baseline justify-between gap-6">
+                          <p className="text-xs font-semibold tracking-[0.25em] text-slate-300">
+                            {group.title.toUpperCase()}
+                          </p>
+                          <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] font-semibold text-white">
+                            {group.tag}
+                          </span>
+                        </div>
+                        <div className="mt-5 overflow-hidden rounded-3xl border border-white/10 bg-black/25">
+                          <div className="max-h-[320px] divide-y divide-white/10 overflow-y-auto sgpf-no-scrollbar">
+                            {group.items.map((item) => (
+                              <div key={`${group.key}-${item.name}`} className="flex items-start gap-4 px-5 py-4">
+                                <div className="mt-0.5 flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                                  <Image src={item.logo} alt={item.name} className="h-full w-full object-contain p-1" />
+                                </div>
+                                <div className="min-w-0">
+                                  <p className="truncate text-sm font-semibold text-white">{item.name}</p>
+                                  {item.meta.map((line) => (
+                                    <p key={`${item.name}-${line}`} className="truncate text-[11px] leading-relaxed text-slate-300">
+                                      {line}
+                                    </p>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>
-                ) : null}
+                </div>
+
+                <div className="relative hidden lg:block">
+                  <div className="pointer-events-none absolute inset-6 rounded-[52px] border border-white/10 bg-black/15" />
+
+                  <div className="absolute left-10 top-10 w-[520px] rotate-[-2deg]">
+                    <div className="rounded-[44px] border border-white/10 bg-black/55 p-8 backdrop-blur">
+                      <div className="flex items-baseline justify-between gap-6">
+                        <p className="text-xs font-semibold tracking-[0.25em] text-slate-300">
+                          {portfolioGroups[0].title.toUpperCase()}
+                        </p>
+                        <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] font-semibold text-white">
+                          {portfolioGroups[0].tag}
+                        </span>
+                      </div>
+                      <div className="mt-5 overflow-hidden rounded-3xl border border-white/10 bg-black/25">
+                        <div className="divide-y divide-white/10">
+                          {portfolioGroups[0].items.map((item) => (
+                            <div key={`current-${item.name}`} className="flex items-start gap-4 px-5 py-4">
+                              <div className="mt-0.5 flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                                <Image src={item.logo} alt={item.name} className="h-full w-full object-contain p-1" />
+                              </div>
+                              <div className="min-w-0">
+                                <p className="truncate text-sm font-semibold text-white">{item.name}</p>
+                                {item.meta.map((line) => (
+                                  <p key={`${item.name}-${line}`} className="truncate text-[11px] leading-relaxed text-slate-300">
+                                    {line}
+                                  </p>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute left-[420px] top-[95px] w-[260px] rotate-[2deg]">
+                    <div className="rounded-[44px] border border-white/10 bg-black/55 p-8 backdrop-blur">
+                      <div className="flex items-baseline justify-between gap-6">
+                        <p className="text-xs font-semibold tracking-[0.25em] text-slate-300">
+                          ADD-ONS
+                        </p>
+                        <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] font-semibold text-white">
+                          {portfolioGroups[1].tag}
+                        </span>
+                      </div>
+                      <div className="mt-5 overflow-hidden rounded-3xl border border-white/10 bg-black/25">
+                        <div className="max-h-[290px] divide-y divide-white/10 overflow-y-auto sgpf-no-scrollbar">
+                          {portfolioGroups[1].items.map((item) => (
+                            <div key={`addons-${item.name}`} className="flex items-start gap-4 px-5 py-4">
+                              <div className="mt-0.5 flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                                <Image src={item.logo} alt={item.name} className="h-full w-full object-contain p-1" />
+                              </div>
+                              <div className="min-w-0">
+                                <p className="truncate text-sm font-semibold text-white">{item.name}</p>
+                                {item.meta.map((line) => (
+                                  <p key={`${item.name}-${line}`} className="truncate text-[11px] leading-relaxed text-slate-300">
+                                    {line}
+                                  </p>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute left-[240px] top-[260px] w-[520px] rotate-[-1deg] opacity-85">
+                    <div className="rounded-[44px] border border-white/10 bg-black/45 p-8 backdrop-blur">
+                      <div className="flex items-baseline justify-between gap-6">
+                        <p className="text-xs font-semibold tracking-[0.25em] text-slate-300">
+                          {portfolioGroups[2].title.toUpperCase()}
+                        </p>
+                        <span className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[11px] font-semibold text-white">
+                          {portfolioGroups[2].tag}
+                        </span>
+                      </div>
+                      <div className="mt-5 overflow-hidden rounded-3xl border border-white/10 bg-black/25">
+                        <div className="max-h-[240px] divide-y divide-white/10 overflow-y-auto sgpf-no-scrollbar">
+                          {portfolioGroups[2].items.map((item) => (
+                            <div key={`prior-${item.name}`} className="flex items-start gap-4 px-5 py-4">
+                              <div className="mt-0.5 flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                                <Image src={item.logo} alt={item.name} className="h-full w-full object-contain p-1" />
+                              </div>
+                              <div className="min-w-0">
+                                <p className="truncate text-sm font-semibold text-white">{item.name}</p>
+                                {item.meta.map((line) => (
+                                  <p key={`${item.name}-${line}`} className="truncate text-[11px] leading-relaxed text-slate-300">
+                                    {line}
+                                  </p>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(to_top,rgba(5,7,11,0.95),rgba(5,7,11,0))]" />
               </div>
-            ))}
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex items-start justify-between gap-8">
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
+                    PORTFOLIO
+                  </p>
+                  <h3 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+                    The companies we back don’t just grow. They compound.
+                  </h3>
+                </div>
+                <span className="text-sm text-slate-400">2025</span>
+              </div>
+
+              <div className="grid gap-2">
+                {portfolioGroups.map((g) => (
+                  <div key={`meta-${g.key}`} className="flex items-start justify-between gap-4">
+                    <span className="text-sm font-semibold text-white">{g.title}</span>
+                    <span className="text-sm text-slate-300">{g.items.length} companies</span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+                Built alongside founders. We help teams scale go-to-market, deepen product strategy, and accelerate growth through disciplined add-ons.
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {["Current", "Prior", "Add-ons"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-white/10 bg-black/25 px-4 py-2 text-xs font-semibold text-slate-200"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-accent/70 hover:bg-accent/20 hover:shadow-glow"
+                >
+                  View portfolio <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/10"
+                >
+                  Talk to us <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -652,7 +820,7 @@ export default function HomePage() {
                 TEAM
               </p>
               <h2 className="text-3xl font-semibold tracking-tight text-white md:text-6xl">
-                Meet our leadership team
+                A Team That Knows What It Takes
               </h2>
               <p className="max-w-2xl text-sm leading-relaxed text-slate-200 md:text-base">
                 A hands-on team built around repeatable software value creation: go-to-market execution, product strategy, and disciplined add-ons.
@@ -711,7 +879,7 @@ export default function HomePage() {
       <section className="relative">
         <div className="pointer-events-none absolute -right-40 top-16 z-0 h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl opacity-45 [animation:sgpf-drift_28s_ease-in-out_infinite]" />
         <div className="container relative z-10 py-20 md:py-24">
-          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div className="flex flex-col items-center gap-8 text-center md:flex-row md:items-end md:justify-between md:text-left">
             <div className="space-y-3">
               <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
                 INSIGHTS
@@ -719,13 +887,13 @@ export default function HomePage() {
               <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl">
                 Insights (blog)
               </h2>
-              <p className="max-w-2xl text-sm leading-relaxed text-slate-200 md:text-base">
+              <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-200 md:text-base md:mx-0">
                 Operator-grade frameworks on go-to-market, product strategy, AI workflows, and add-ons.
               </p>
             </div>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 self-start rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/10 md:self-auto"
+              className="inline-flex items-center gap-2 self-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-white/25 hover:bg-white/10 md:self-auto"
             >
               View Insights <span className="text-accent">→</span>
             </Link>
@@ -854,9 +1022,9 @@ export default function HomePage() {
 
       <CTASection
         variant="hero"
-        title={"A partner for\nsoftware value creation"}
-        description="If you’re scaling go-to-market, sharpening product strategy, or exploring add-ons, submit a pitch and we’ll respond quickly."
-        primaryAction={{ label: "Contact us", href: "/contact" }}
+        title="Ready for what comes next?"
+        description="A focused conversation with a quick decision, and no wasted time."
+        primaryAction={{ label: "Get in Touch", href: "/contact" }}
       />
     </>
   );
