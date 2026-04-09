@@ -88,7 +88,9 @@ export function HeroSection({
                       ].join(" ")}
                     >
                       {action.label}
-                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+                      <span className="sgpf-icon-tile sgpf-icon-tile-xs">
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
                     </Link>
                   );
                 })}

@@ -111,12 +111,12 @@ export function FilterablePortfolioGrid({
         {filtered.map((company) => (
           <div
             key={company.id}
-            className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition will-change-transform hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.05]"
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition will-change-transform hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.05]"
           >
             <div className="flex items-start justify-between gap-6">
               <div>
                 {company.logo ? (
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/30">
                     <Image
                       src={company.logo}
                       alt={company.name}
@@ -145,7 +145,7 @@ export function FilterablePortfolioGrid({
                 {company.metrics.map((metric) => (
                   <div
                     key={metric.label}
-                    className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/25 px-4 py-3"
+                    className="flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-black/25 px-4 py-3"
                   >
                     <span className="text-xs text-slate-300">{metric.label}</span>
                     <span className="text-sm font-semibold text-white">

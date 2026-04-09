@@ -27,7 +27,7 @@ export function PortfolioGrid({ items }: PortfolioGridProps) {
         {items.map((item, index) => (
           <div
             key={`${item.name}-${index}`}
-            className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition will-change-transform hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white/7 hover:shadow-glow"
+            className="group rounded-xl border border-white/10 bg-white/5 p-6 transition will-change-transform hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white/7 hover:shadow-glow"
           >
             <div className="flex items-start justify-between gap-4">
               <h3 className="text-base font-semibold text-white">{item.name}</h3>

@@ -408,15 +408,15 @@ export default function HomePage() {
             </div>
 
             <div className="lg:self-center lg:my-auto">
-              <div className="rounded-[44px] bg-black/10 p-2">
-                <div className="divide-y divide-white/10 overflow-hidden rounded-[40px] border border-white/10 bg-black/25">
+              <div className="rounded-[32px] bg-black/10 p-2">
+                <div className="divide-y divide-white/10 overflow-hidden rounded-[30px] border border-white/10 bg-black/25">
                   {edge.map((item) => (
                     <div
                       key={item.id}
                       className="group flex items-start gap-4 px-6 py-6 transition hover:bg-white/[0.03]"
                     >
-                      <div className="sgpf-icon-tile sgpf-icon-tile-lg">
-                        <item.icon className="h-5 w-5 text-accent" />
+                      <div className="sgpf-icon-tile">
+                        <item.icon className="h-5 w-5" />
                       </div>
                       <div className="min-w-0 pt-0.5 text-left">
                         <p className="text-base font-semibold tracking-tight text-white">
@@ -438,12 +438,12 @@ export default function HomePage() {
       <section className="relative">
         <div className="pointer-events-none absolute -right-40 top-10 z-0 h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl opacity-50 [animation:sgpf-drift_26s_ease-in-out_infinite]" />
         <div className="container relative z-10 py-20 md:py-24">
-          <div className="grid gap-10 lg:grid-cols-3 lg:items-start">
-            <div className="order-2 space-y-5 lg:order-1 lg:pt-16">
+          <div className="grid gap-10 lg:grid-cols-3 lg:items-center">
+            <div className="order-2 space-y-5 lg:order-1">
               {investmentCriteria.slice(0, 3).map((item) => (
                 <div key={item.id} className="flex items-start gap-4">
                   <div className="sgpf-icon-tile mt-0.5">
-                    <item.icon className="h-5 w-5 text-accent/80" />
+                    <item.icon className="h-5 w-5" />
                   </div>
                   <div className="min-w-0">
                     <p className="text-sm font-semibold text-white md:text-base">
@@ -457,7 +457,7 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="order-1 space-y-6 text-center lg:order-2 lg:pt-8">
+            <div className="sgpf-panel sgpf-panel-glow order-1 space-y-6 p-10 text-center md:p-12 lg:order-2 lg:self-center">
               <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
                 VALUE PROPOSITIONS
               </p>
@@ -499,11 +499,11 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="order-3 space-y-5 lg:pt-16">
+            <div className="order-3 space-y-5">
               {investmentCriteria.slice(3).map((item) => (
                 <div key={item.id} className="flex items-start gap-4">
                   <div className="sgpf-icon-tile mt-0.5">
-                    <item.icon className="h-5 w-5 text-accent/80" />
+                    <item.icon className="h-5 w-5" />
                   </div>
                   <div className="min-w-0">
                     <p className="text-sm font-semibold text-white md:text-base">
@@ -534,8 +534,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute -left-48 top-14 z-0 h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl opacity-60 [animation:sgpf-drift_28s_ease-in-out_infinite]" />
         <div className="container relative z-10 py-20 md:py-24">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="relative overflow-hidden rounded-[56px] border border-white/10 bg-white/[0.02]">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_circle_at_22%_20%,rgba(0,255,255,0.18),transparent_58%),radial-gradient(900px_circle_at_80%_40%,rgba(255,255,255,0.06),transparent_60%),radial-gradient(rgba(255,255,255,0.10)_1px,transparent_1px)] [background-size:auto,auto,18px_18px] opacity-[0.10]" />
+            <div className="sgpf-panel sgpf-panel-glow sgpf-panel-grid">
               <div className="relative min-h-[520px] p-10 md:min-h-[560px]">
                 <div className="pointer-events-none absolute -left-48 top-10 h-[520px] w-[520px] rounded-full bg-accent/10 blur-3xl opacity-70" />
                 <div className="pointer-events-none absolute -right-48 bottom-10 h-[520px] w-[520px] rounded-full bg-white/5 blur-3xl opacity-60" />
@@ -543,7 +542,7 @@ export default function HomePage() {
                 <div className="relative mt-2 lg:hidden">
                   <div className="grid gap-4">
                     {portfolioGroups.map((group) => (
-                      <div key={group.key} className="rounded-[44px] border border-white/10 bg-black/50 p-8 backdrop-blur">
+                      <div key={group.key} className="rounded-[32px] border border-white/10 bg-black/50 p-8 backdrop-blur">
                         <div className="flex items-baseline justify-between gap-6">
                           <p className="text-xs font-semibold tracking-[0.25em] text-slate-300">
                             {group.title.toUpperCase()}
@@ -577,10 +576,10 @@ export default function HomePage() {
                 </div>
 
                 <div className="relative hidden lg:block">
-                  <div className="pointer-events-none absolute inset-6 rounded-[52px] border border-white/10 bg-black/15" />
+                  <div className="pointer-events-none absolute inset-6 rounded-[38px] border border-white/10 bg-black/15" />
 
                   <div className="absolute left-10 top-10 w-[520px] rotate-[-2deg]">
-                    <div className="rounded-[44px] border border-white/10 bg-black/55 p-8 backdrop-blur">
+                    <div className="rounded-[32px] border border-white/10 bg-black/55 p-8 backdrop-blur">
                       <div className="flex items-baseline justify-between gap-6">
                         <p className="text-xs font-semibold tracking-[0.25em] text-slate-300">
                           {portfolioGroups[0].title.toUpperCase()}
@@ -612,7 +611,7 @@ export default function HomePage() {
                   </div>
 
                   <div className="absolute left-[420px] top-[95px] w-[260px] rotate-[2deg]">
-                    <div className="rounded-[44px] border border-white/10 bg-black/55 p-8 backdrop-blur">
+                    <div className="rounded-[32px] border border-white/10 bg-black/55 p-8 backdrop-blur">
                       <div className="flex items-baseline justify-between gap-6">
                         <p className="text-xs font-semibold tracking-[0.25em] text-slate-300">
                           ADD-ONS
@@ -644,7 +643,7 @@ export default function HomePage() {
                   </div>
 
                   <div className="absolute left-[240px] top-[260px] w-[520px] rotate-[-1deg] opacity-85">
-                    <div className="rounded-[44px] border border-white/10 bg-black/45 p-8 backdrop-blur">
+                    <div className="rounded-[32px] border border-white/10 bg-black/45 p-8 backdrop-blur">
                       <div className="flex items-baseline justify-between gap-6">
                         <p className="text-xs font-semibold tracking-[0.25em] text-slate-300">
                           {portfolioGroups[2].title.toUpperCase()}
@@ -778,9 +777,11 @@ export default function HomePage() {
                     <div className="pointer-events-none absolute left-5 top-10 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-xs font-semibold text-white">
                       {index + 1}
                     </div>
-                    <div className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.03] p-7 transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]">
+                    <div className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] p-7 transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]">
                       <div className="pointer-events-none absolute -right-24 -top-24 h-[280px] w-[280px] rounded-full bg-accent/10 blur-3xl opacity-30 transition group-hover:opacity-55" />
-                      <Sparkles className="absolute right-5 top-5 h-5 w-5 text-accent/80 opacity-70 transition group-hover:opacity-100" />
+                      <span className="sgpf-icon-tile sgpf-icon-tile-sm absolute right-5 top-5 opacity-70 transition group-hover:opacity-100">
+                        <Sparkles className="h-4 w-4" />
+                      </span>
                       <p className="text-[11px] font-semibold tracking-[0.22em] text-slate-400">
                         {step.tags[0]?.toUpperCase()}
                       </p>
@@ -839,7 +840,7 @@ export default function HomePage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:mt-12 lg:grid-cols-5 lg:gap-3">
             {leadership.map((person) => (
               <div key={person.id} className="group">
-                <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]">
+                <div className="relative overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.03] transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]">
                   <div className="pointer-events-none absolute -right-24 -top-24 h-[260px] w-[260px] rounded-full bg-accent/10 blur-3xl opacity-35 transition group-hover:opacity-55" />
                   <div className="relative aspect-[3/4] overflow-hidden">
                     <Image
@@ -902,7 +903,7 @@ export default function HomePage() {
           <div className="mt-10 grid gap-4 lg:grid-cols-12 lg:items-stretch">
             <Link
               href={insightsPreview[0].href}
-              className="group relative flex h-full flex-col overflow-hidden rounded-[44px] border border-white/10 bg-white/[0.03] transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05] lg:col-span-6"
+              className="group relative flex h-full flex-col overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05] lg:col-span-6"
             >
               <div className="relative overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_0%,rgba(0,255,255,0.18),transparent_55%),radial-gradient(700px_circle_at_80%_70%,rgba(255,255,255,0.06),transparent_60%)]" />
@@ -930,7 +931,9 @@ export default function HomePage() {
                   </span>
                   <span className="text-xs text-slate-400">{insightsPreview[0].date}</span>
                   <span className="flex items-center gap-1 text-xs text-slate-400">
-                    <Clock className="h-3.5 w-3.5" />
+                    <span className="sgpf-icon-tile sgpf-icon-tile-xs">
+                      <Clock className="h-3.5 w-3.5" />
+                    </span>
                     {insightsPreview[0].readTime}
                   </span>
                 </div>
@@ -956,7 +959,9 @@ export default function HomePage() {
                 <div className="mt-auto pt-8">
                   <div className="inline-flex items-center gap-2 text-sm font-semibold leading-none text-white">
                     <span>Read more</span>
-                    <ArrowRight className="relative -top-px h-4 w-4 text-accent transition group-hover:translate-x-0.5" />
+                    <span className="sgpf-icon-tile sgpf-icon-tile-xs">
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
                   </div>
                 </div>
               </div>
@@ -967,7 +972,7 @@ export default function HomePage() {
                 <Link
                   key={post.id}
                   href={post.href}
-                  className="group relative h-full overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]"
+                  className="group relative h-full overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.03] transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]"
                 >
                   <div className="relative overflow-hidden">
                     <div className="absolute inset-0 bg-[radial-gradient(800px_circle_at_15%_0%,rgba(0,255,255,0.14),transparent_60%),radial-gradient(700px_circle_at_85%_70%,rgba(255,255,255,0.06),transparent_65%)]" />
@@ -991,7 +996,9 @@ export default function HomePage() {
                       </span>
                       <span className="text-xs text-slate-400">{post.date}</span>
                       <span className="flex items-center gap-1 text-xs text-slate-400">
-                        <Clock className="h-3.5 w-3.5" />
+                        <span className="sgpf-icon-tile sgpf-icon-tile-xs">
+                          <Clock className="h-3.5 w-3.5" />
+                        </span>
                         {post.readTime}
                       </span>
                     </div>
@@ -1010,7 +1017,9 @@ export default function HomePage() {
                     </p>
                     <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold leading-none text-white">
                       <span>Read more</span>
-                      <ArrowRight className="relative -top-px h-4 w-4 text-accent transition group-hover:translate-x-0.5" />
+                      <span className="sgpf-icon-tile sgpf-icon-tile-xs">
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
                     </div>
                   </div>
                 </Link>

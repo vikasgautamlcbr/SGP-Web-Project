@@ -50,7 +50,7 @@ export default function BlogPage() {
             <Link
               key={post.title}
               href={post.href}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 transition will-change-transform hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white/7 hover:shadow-glow"
+              className="rounded-xl border border-white/10 bg-white/5 p-6 transition will-change-transform hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white/7 hover:shadow-glow"
             >
               <h2 className="text-lg font-semibold text-white">{post.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-slate-200">

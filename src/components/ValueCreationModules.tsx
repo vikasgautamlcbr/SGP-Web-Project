@@ -99,8 +99,7 @@ export function ValueCreationModules({
               })}
             </div>
 
-            <div className="relative mt-8 overflow-hidden rounded-[56px] bg-black/25 p-10 md:p-12">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(900px_circle_at_20%_10%,rgba(0,255,255,0.18),transparent_55%),radial-gradient(900px_circle_at_85%_70%,rgba(255,255,255,0.06),transparent_60%)]" />
+            <div className="sgpf-panel sgpf-panel-glow mt-8 p-10 md:p-12">
               <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
                 <div className={align === "center" ? "space-y-5 text-center lg:text-left" : "space-y-5"}>
                   <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">

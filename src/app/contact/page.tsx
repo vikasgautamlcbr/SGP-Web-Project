@@ -19,7 +19,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <form
               id="submit-pitch"
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]"
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]"
             >
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="space-y-2">
@@ -28,7 +28,7 @@ export default function ContactPage() {
                   </span>
                   <input
                     name="companyName"
-                    className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+                    className="w-full rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
                     placeholder="Company Name"
                   />
                 </label>
@@ -39,7 +39,7 @@ export default function ContactPage() {
                   </span>
                   <input
                     name="nameTitle"
-                    className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+                    className="w-full rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
                     placeholder="Your Name & Title"
                   />
                 </label>
@@ -51,7 +51,7 @@ export default function ContactPage() {
                   <input
                     name="email"
                     type="email"
-                    className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+                    className="w-full rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
                     placeholder="you@company.com"
                   />
                 </label>
@@ -63,7 +63,7 @@ export default function ContactPage() {
                 </span>
                 <select
                   name="interest"
-                  className="w-full rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+                  className="w-full rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
                   defaultValue=""
                 >
                   <option value="" disabled>
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 </span>
                 <textarea
                   name="additionalInfo"
-                  className="min-h-[160px] w-full resize-y rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
+                  className="min-h-[160px] w-full resize-y rounded-lg border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-accent/50"
                   placeholder="Additional Information (if any)"
                 />
               </label>
@@ -97,7 +97,7 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-4">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
               <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
                 PREFER TO REACH OUT DIRECTLY?
               </p>
