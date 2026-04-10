@@ -1,11 +1,5 @@
 const nextConfig = {
-  reactStrictMode: true,
-  webpack: (config, { dev }) => {
-    if (dev) {
-      config.cache = false;
-    }
-    return config;
-  }
+  reactStrictMode: true
 };
 
 module.exports = nextConfig;

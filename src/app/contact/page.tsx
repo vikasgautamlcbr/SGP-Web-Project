@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/HeroSection";
+import { HeroGraphic } from "@/components/HeroGraphic";
 
 export default function ContactPage() {
   return (
@@ -11,15 +12,18 @@ export default function ContactPage() {
           { label: "See Our Portfolio", href: "/portfolio", variant: "secondary" },
           { label: "Investment Focus", href: "/investment-focus", variant: "primary" }
         ]}
+        right={<HeroGraphic variant="contact" />}
+        rightParallax
       />
 
-      <section>
-        <div className="container py-16">
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(900px_circle_at_85%_10%,rgba(0,255,255,0.10),transparent_60%),radial-gradient(900px_circle_at_20%_80%,rgba(255,255,255,0.04),transparent_60%)]" />
+        <div className="container relative z-10 py-16">
           <div className="grid gap-6 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <form
               id="submit-pitch"
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]"
+              className="sgpf-panel sgpf-panel-glow p-8 md:p-10"
             >
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="space-y-2">
@@ -97,7 +101,7 @@ export default function ContactPage() {
           </div>
 
           <div className="space-y-4">
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
+            <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10">
               <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
                 PREFER TO REACH OUT DIRECTLY?
               </p>

@@ -1,5 +1,6 @@
 import { CTASection } from "@/components/CTASection";
 import { HeroSection } from "@/components/HeroSection";
+import { HeroGraphic } from "@/components/HeroGraphic";
 
 const investmentThemes = [
   {
@@ -72,10 +73,13 @@ export default function InvestmentFocusPage() {
           { label: "Talk to Us", href: "/contact", variant: "primary" },
           { label: "See Our Portfolio", href: "/portfolio", variant: "secondary" }
         ]}
+        right={<HeroGraphic variant="strategy" />}
+        rightParallax
       />
 
-      <section>
-        <div className="container py-16">
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(900px_circle_at_85%_10%,rgba(0,255,255,0.10),transparent_60%),radial-gradient(900px_circle_at_20%_80%,rgba(255,255,255,0.04),transparent_60%)]" />
+        <div className="container relative z-10 py-16">
           <div className="space-y-10">
             <div className="space-y-3">
               <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
@@ -89,22 +93,21 @@ export default function InvestmentFocusPage() {
               </p>
             </div>
 
-          <div className="grid gap-4 lg:grid-cols-3">
-            {investmentThemes.map((theme) => (
-              <div
-                key={theme.id}
-                className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]"
-              >
-                <p className="text-base font-semibold text-white">{theme.title}</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-200">
-                  {theme.body}
-                </p>
-              </div>
-            ))}
+          <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10">
+            <div className="divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
+              {investmentThemes.map((theme) => (
+                <div key={theme.id} className="px-6 py-6">
+                  <p className="text-base font-semibold text-white">{theme.title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                    {theme.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="grid gap-4 lg:grid-cols-3">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05] lg:col-span-2">
+            <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10 lg:col-span-2">
               <h3 className="text-lg font-semibold text-white">
                 The Kind of Businesses We Back
               </h3>
@@ -115,30 +118,30 @@ export default function InvestmentFocusPage() {
                 {companyTypes.map((item) => (
                   <div
                     key={item.title}
-                    className="rounded-2xl border border-white/10 bg-black/25 px-4 py-4"
+                    className="sgpf-bullet rounded-xl border border-white/10 bg-black/25 px-4 py-4"
                   >
-                    <p className="text-sm font-semibold text-white">{item.title}</p>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-200">
-                      {item.body}
-                    </p>
+                    <span className="sgpf-bullet-dot" />
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-white">{item.title}</p>
+                      <p className="mt-2 text-xs leading-relaxed text-slate-200">
+                        {item.body}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
+            <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10">
               <h3 className="text-lg font-semibold text-white">
                 No hard filters. Just honest criteria.
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-200">
                 We typically invest in companies that look something like this:
               </p>
-              <div className="mt-5 grid gap-2">
+              <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
                 {stageCriteria.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-slate-200"
-                  >
+                  <div key={item} className="px-6 py-4 text-sm text-slate-200">
                     {item}
                   </div>
                 ))}
@@ -147,38 +150,33 @@ export default function InvestmentFocusPage() {
           </div>
 
           <div className="grid gap-4 lg:grid-cols-2">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
+            <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10">
               <h3 className="text-lg font-semibold text-white">
                 Where We’re Most Useful
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-200">
                 We partner at the moments where growth becomes less obvious and more important to get right.
               </p>
-              <div className="mt-5 grid gap-2 sm:grid-cols-2">
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {valueAreas.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-slate-200"
-                  >
-                    {item}
+                  <div key={item} className="sgpf-bullet rounded-xl border border-white/10 bg-black/25 px-4 py-4 text-sm text-slate-200">
+                    <span className="sgpf-bullet-dot" />
+                    <span className="leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
+            <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10">
               <h3 className="text-lg font-semibold text-white">
                 Representative examples
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-slate-200">
                 Illustrative examples for quick scanning.
               </p>
-              <div className="mt-5 grid gap-2">
+              <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
                 {exampleCompanies.map((company) => (
-                  <div
-                    key={company.id}
-                    className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/25 px-4 py-3"
-                  >
+                  <div key={company.id} className="flex items-center justify-between gap-4 px-6 py-4">
                     <span className="text-sm font-semibold text-white">
                       {company.name}
                     </span>

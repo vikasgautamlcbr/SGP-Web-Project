@@ -113,10 +113,10 @@ export function ValueCreationModules({
                   </p>
 
                   {active?.bullets?.length ? (
-                    <ul className={align === "center" ? "mx-auto max-w-2xl space-y-3 text-left lg:mx-0" : "max-w-2xl space-y-3"}>
+                    <ul className={align === "center" ? "sgpf-bullet-list mx-auto max-w-2xl text-left lg:mx-0" : "sgpf-bullet-list max-w-2xl"}>
                       {active.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-3">
-                          <span className="mt-2 h-2 w-2 rounded-full bg-accent/70" />
+                        <li key={bullet} className="sgpf-bullet">
+                          <span className="sgpf-bullet-dot" />
                           <p className="text-sm leading-relaxed text-slate-200">{bullet}</p>
                         </li>
                       ))}
@@ -199,9 +199,9 @@ export function ValueCreationModules({
                   {active.bullets.map((bullet) => (
                     <div
                       key={bullet}
-                      className="flex items-start gap-3 rounded-2xl border border-white/10 bg-black/25 px-4 py-3"
+                      className="sgpf-bullet rounded-xl border border-white/10 bg-black/25 px-4 py-3"
                     >
-                      <span className="mt-1.5 h-2 w-2 rounded-full bg-accent/70" />
+                      <span className="sgpf-bullet-dot" />
                       <p className="text-sm text-slate-200">{bullet}</p>
                     </div>
                   ))}

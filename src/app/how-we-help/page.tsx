@@ -1,10 +1,13 @@
 import { CTASection } from "@/components/CTASection";
 import { HeroSection } from "@/components/HeroSection";
+import { ArrowRight, BriefcaseBusiness, ChartNoAxesCombined, Code2, Users } from "lucide-react";
+import { HeroGraphic } from "@/components/HeroGraphic";
 
 const functionalAreas = [
   {
     id: "area-gtm",
     title: "Go-to-Market",
+    icon: ChartNoAxesCombined,
     challenge:
       "You built the business on founder relationships and referrals. Now you need a repeatable revenue engine that doesn’t depend on you being in every deal.",
     bullets: [
@@ -18,6 +21,7 @@ const functionalAreas = [
   {
     id: "area-product",
     title: "Product & AI",
+    icon: Code2,
     challenge:
       "Your product works but the roadmap is reactive, engineering is stretched, and AI is everywhere without clear direction.",
     bullets: [
@@ -31,6 +35,7 @@ const functionalAreas = [
   {
     id: "area-talent",
     title: "Talent & Org Design",
+    icon: Users,
     challenge:
       "The team that got you here won’t necessarily get you to the next stage. Knowing what to change and when is one of the hardest parts of scaling.",
     bullets: [
@@ -44,6 +49,7 @@ const functionalAreas = [
   {
     id: "area-ma",
     title: "M&A & Acquisitions",
+    icon: BriefcaseBusiness,
     challenge:
       "You see opportunities for acquisition, but lack the infrastructure to source, execute, and integrate deals effectively.",
     bullets: [
@@ -72,10 +78,13 @@ export default function HowWeHelpPage() {
           { label: "View Portfolio", href: "/portfolio", variant: "primary" },
           { label: "Talk to Us", href: "/contact", variant: "secondary" }
         ]}
+        right={<HeroGraphic variant="help" />}
+        rightParallax
       />
 
-      <section>
-        <div className="container py-16">
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(900px_circle_at_85%_10%,rgba(0,255,255,0.10),transparent_60%),radial-gradient(900px_circle_at_20%_80%,rgba(255,255,255,0.04),transparent_60%)]" />
+        <div className="container relative z-10 py-16">
           <div className="space-y-3">
             <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
               OVERVIEW
@@ -88,54 +97,74 @@ export default function HowWeHelpPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 lg:grid-cols-2">
-            {functionalAreas.map((area) => (
-              <div
-                key={area.id}
-                className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition will-change-transform hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.05]"
-              >
-                <p className="text-lg font-semibold text-white">{area.title}</p>
-
-                <p className="mt-4 text-xs font-semibold tracking-[0.22em] text-accent/80">
-                  THE CHALLENGE
-                </p>
-                <p className="mt-2 text-sm leading-relaxed text-slate-200">
-                  {area.challenge}
-                </p>
-
-                <p className="mt-5 text-xs font-semibold tracking-[0.22em] text-accent/80">
-                  WHAT WE DO
-                </p>
-                <ul className="mt-3 space-y-2">
-                  {area.bullets.map((bullet) => (
-                    <li
-                      key={`${area.id}-${bullet}`}
-                      className="rounded-2xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-slate-200"
-                    >
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-
-                {area.trackRecord?.length ? (
-                  <>
-                    <p className="mt-6 text-xs font-semibold tracking-[0.22em] text-accent/80">
-                      OUR TRACK RECORD
-                    </p>
-                    <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                      {area.trackRecord.map((item) => (
-                        <div
-                          key={`${area.id}-${item}`}
-                          className="rounded-2xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-slate-200"
-                        >
-                          {item}
-                        </div>
-                      ))}
+          <div className="sgpf-panel sgpf-panel-glow mt-10 p-8 md:p-10">
+            <div className="divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
+              {functionalAreas.map((area) => (
+                <details
+                  key={area.id}
+                  className="group px-6 py-6"
+                  open={area.id === "area-gtm"}
+                >
+                  <summary className="flex items-start gap-4">
+                    <span className="sgpf-icon-tile mt-0.5">
+                      <area.icon className="h-5 w-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-lg font-semibold text-white">{area.title}</p>
+                      <p className="mt-1 text-sm text-slate-300">
+                        The challenge + what we do
+                      </p>
                     </div>
-                  </>
-                ) : null}
-              </div>
-            ))}
+                    <ArrowRight className="ml-auto mt-2 h-4 w-4 shrink-0 text-accent transition group-open:rotate-90" />
+                  </summary>
+
+                  <div className="mt-5 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+                    <div>
+                      <p className="text-xs font-semibold tracking-[0.22em] text-accent/80">
+                        THE CHALLENGE
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                        {area.challenge}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-semibold tracking-[0.22em] text-accent/80">
+                        WHAT WE DO
+                      </p>
+                      <ul className="sgpf-bullet-list mt-3">
+                        {area.bullets.map((bullet) => (
+                          <li key={`${area.id}-${bullet}`} className="sgpf-bullet">
+                            <span className="sgpf-bullet-dot" />
+                            <p className="text-sm leading-relaxed text-slate-200">
+                              {bullet}
+                            </p>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {area.trackRecord?.length ? (
+                        <div className="mt-6">
+                          <p className="text-xs font-semibold tracking-[0.22em] text-accent/80">
+                            OUR TRACK RECORD
+                          </p>
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {area.trackRecord.map((item) => (
+                              <span
+                                key={`${area.id}-${item}`}
+                                className="rounded-full border border-white/10 bg-black/25 px-4 py-2 text-xs font-semibold text-slate-200"
+                              >
+                                {item}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>

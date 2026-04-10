@@ -1,5 +1,6 @@
 import { CTASection } from "@/components/CTASection";
 import { HeroSection } from "@/components/HeroSection";
+import { HeroGraphic } from "@/components/HeroGraphic";
 import { FilterablePortfolioGrid } from "@/components/FilterablePortfolioGrid";
 import Image from "next/image";
 
@@ -193,10 +194,13 @@ export default function PortfolioPage() {
           { label: "Talk to Us", href: "/contact", variant: "primary" },
           { label: "Investment Focus", href: "/investment-focus", variant: "secondary" }
         ]}
+        right={<HeroGraphic variant="portfolio" />}
+        rightParallax
       />
 
-      <section>
-        <div className="container py-16">
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(900px_circle_at_85%_10%,rgba(0,255,255,0.10),transparent_60%),radial-gradient(900px_circle_at_20%_80%,rgba(255,255,255,0.04),transparent_60%)]" />
+        <div className="container relative z-10 py-16">
           <div className="space-y-2">
             <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
               CURRENT INVESTMENTS
@@ -209,51 +213,51 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {featuredCompanies.map((company) => (
-              <div
-                key={company.id}
-                className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]"
-              >
-                <div className="flex items-start justify-between gap-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
-                      <Image
-                        src={company.logo}
-                        alt={company.name}
-                        className="h-full w-full object-contain p-1.5"
-                      />
+          <div className="sgpf-panel sgpf-panel-glow mt-10 p-8 md:p-10">
+            <div className="divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
+              {featuredCompanies.map((company) => (
+                <div key={company.id} className="px-6 py-6">
+                  <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                    <div className="flex items-start gap-4">
+                      <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/30">
+                        <Image
+                          src={company.logo}
+                          alt={company.name}
+                          className="h-full w-full object-contain p-1.5"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-base font-semibold text-white">
+                          {company.name}
+                        </p>
+                        <p className="mt-1 text-xs text-slate-300">
+                          {company.sector} • {company.group} • {company.status}
+                        </p>
+                        <p className="mt-3 text-sm leading-relaxed text-slate-200">
+                          {company.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-base font-semibold text-white">{company.name}</p>
-                      <p className="mt-1 text-xs text-slate-300">
-                        {company.sector} • {company.group}
-                      </p>
+
+                    <div className="grid gap-2 sm:grid-cols-2 lg:w-[420px] lg:shrink-0">
+                      {company.metrics.map((metric) => (
+                        <div
+                          key={metric.label}
+                          className="rounded-xl border border-white/10 bg-black/25 px-4 py-3"
+                        >
+                          <p className="text-[11px] font-semibold tracking-[0.22em] text-slate-400">
+                            {metric.label}
+                          </p>
+                          <p className="mt-2 text-sm font-semibold text-white">
+                            {metric.value}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-accent/70 opacity-70" />
                 </div>
-                <p className="mt-1 text-xs text-slate-300">
-                  {company.status}
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-slate-200">
-                  {company.description}
-                </p>
-                <div className="mt-5 grid gap-2">
-                  {company.metrics.map((metric) => (
-                    <div
-                      key={metric.label}
-                      className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/25 px-4 py-3"
-                    >
-                      <span className="text-xs text-slate-300">{metric.label}</span>
-                      <span className="text-sm font-semibold text-white">
-                        {metric.value}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -265,8 +269,9 @@ export default function PortfolioPage() {
         companies={companies}
       />
 
-      <section className="border-y border-white/10 bg-black/30">
-        <div className="container py-16">
+      <section className="relative overflow-hidden border-y border-white/10 bg-black/30">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(900px_circle_at_10%_10%,rgba(0,255,255,0.10),transparent_55%),radial-gradient(900px_circle_at_85%_80%,rgba(255,255,255,0.04),transparent_60%)]" />
+        <div className="container relative z-10 py-16">
           <div className="space-y-2">
             <p className="text-xs font-semibold tracking-[0.25em] text-accent/80">
               PLATFORM MAP
@@ -280,9 +285,9 @@ export default function PortfolioPage() {
           </div>
 
           <div className="mt-10 grid gap-4 lg:grid-cols-4">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 lg:col-span-2">
+            <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10 lg:col-span-2">
               <p className="text-sm font-semibold text-white">Platforms</p>
-              <div className="mt-5 grid gap-2 sm:grid-cols-2">
+              <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
                 {[
                   { name: "Venio Systems", logo: VenioLogo },
                   { name: "MeshIQ", logo: MeshIQLogo },
@@ -290,9 +295,9 @@ export default function PortfolioPage() {
                 ].map((item) => (
                   <div
                     key={item.name}
-                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-black/25 px-4 py-3"
+                    className="flex items-center gap-4 px-6 py-4"
                   >
-                    <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                    <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/30">
                       <Image
                         src={item.logo}
                         alt={item.name}
@@ -307,9 +312,9 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 lg:col-span-2">
+            <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10 lg:col-span-2">
               <p className="text-sm font-semibold text-white">Add-ons + outcomes</p>
-              <div className="mt-5 grid gap-2">
+              <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
                 {[
                   { left: "Cleo", leftLogo: CleoLogo, right: "Extol", rightLogo: ExtolLogo, year: "2016" },
                   { left: "Netreo", leftLogo: NetreoLogo, right: "CloudMonix", rightLogo: CloudMonixLogo, year: "2020" },
@@ -319,10 +324,10 @@ export default function PortfolioPage() {
                 ].map((row) => (
                   <div
                     key={`${row.left}-${row.right}-${row.year}`}
-                    className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-white/10 bg-black/25 px-4 py-3"
+                    className="flex flex-wrap items-center justify-between gap-3 px-6 py-4"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                      <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/30">
                         <Image src={row.leftLogo} alt={row.left} className="h-full w-full object-contain p-1" />
                       </div>
                       <span className="text-sm font-semibold text-white">{row.left}</span>
@@ -333,7 +338,7 @@ export default function PortfolioPage() {
                     </span>
 
                     <div className="flex items-center gap-2">
-                      <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+                      <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-black/30">
                         <Image src={row.rightLogo} alt={row.right} className="h-full w-full object-contain p-1" />
                       </div>
                       <span className="text-sm font-semibold text-white">{row.right}</span>
@@ -360,18 +365,17 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {valueCreationHighlights.map((item) => (
-              <div
-                key={item.id}
-                className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition will-change-transform hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.05]"
-              >
-                <p className="text-base font-semibold text-white">{item.title}</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-200">
-                  {item.body}
-                </p>
-              </div>
-            ))}
+          <div className="sgpf-panel sgpf-panel-glow mt-10 p-8 md:p-10">
+            <div className="divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
+              {valueCreationHighlights.map((item) => (
+                <div key={item.id} className="px-6 py-6">
+                  <p className="text-base font-semibold text-white">{item.title}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

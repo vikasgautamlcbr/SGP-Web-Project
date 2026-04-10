@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 import { CTASection } from "@/components/CTASection";
 import { HeroSection } from "@/components/HeroSection";
+import { HeroGraphic } from "@/components/HeroGraphic";
 
 const posts = [
   {
@@ -32,10 +34,13 @@ export default function BlogPage() {
           { label: "About", href: "/about", variant: "primary" },
           { label: "Contact us", href: "/contact", variant: "secondary" }
         ]}
+        right={<HeroGraphic variant="insights" />}
+        rightParallax
       />
 
-      <section>
-        <div className="container py-16">
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(900px_circle_at_85%_10%,rgba(0,255,255,0.10),transparent_60%),radial-gradient(900px_circle_at_20%_80%,rgba(255,255,255,0.04),transparent_60%)]" />
+        <div className="container relative z-10 py-16">
           <div className="flex items-end justify-between gap-6">
             <p className="text-sm text-slate-300">
               Publishing regularly. In the meantime, here are a few representative topics.
@@ -45,19 +50,28 @@ export default function BlogPage() {
             </span>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-          {posts.map((post) => (
-            <Link
-              key={post.title}
-              href={post.href}
-              className="rounded-xl border border-white/10 bg-white/5 p-6 transition will-change-transform hover:-translate-y-0.5 hover:border-accent/40 hover:bg-white/7 hover:shadow-glow"
-            >
-              <h2 className="text-lg font-semibold text-white">{post.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-slate-200">
-                {post.excerpt}
-              </p>
-            </Link>
-          ))}
+          <div className="sgpf-panel sgpf-panel-glow mt-10 p-8 md:p-10">
+            <div className="divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
+              {posts.map((post) => (
+                <Link
+                  key={post.title}
+                  href={post.href}
+                  className="group flex items-start justify-between gap-6 px-6 py-6 transition hover:bg-white/[0.03]"
+                >
+                  <div className="min-w-0">
+                    <h2 className="text-base font-semibold text-white md:text-lg">
+                      {post.title}
+                    </h2>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                  <span className="sgpf-icon-tile sgpf-icon-tile-xs mt-1 transition group-hover:translate-x-0.5">
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

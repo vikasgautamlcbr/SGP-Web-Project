@@ -1,5 +1,6 @@
 import { CTASection } from "@/components/CTASection";
 import { HeroSection } from "@/components/HeroSection";
+import { HeroGraphic } from "@/components/HeroGraphic";
 
 const beliefs = [
   "Growth rate is overrated. Retention isn’t. The best companies compound through strong retention, not just aggressive top-line growth.",
@@ -27,36 +28,35 @@ export default function AboutPage() {
           { label: "Meet the Team", href: "/team", variant: "primary" },
           { label: "See Our Portfolio", href: "/portfolio", variant: "secondary" }
         ]}
+        right={<HeroGraphic variant="about" />}
+        rightParallax
       />
 
-      <section>
-        <div className="container py-16">
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(900px_circle_at_85%_10%,rgba(0,255,255,0.10),transparent_60%),radial-gradient(900px_circle_at_20%_80%,rgba(255,255,255,0.04),transparent_60%)]" />
+        <div className="container relative z-10 py-16">
           <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
+          <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10">
             <h2 className="text-lg font-semibold text-white">
               What We Believe
             </h2>
-            <div className="mt-5 grid gap-2">
+            <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
               {beliefs.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-slate-200"
-                >
-                  {item}
+                <div key={item} className="sgpf-bullet px-6 py-5">
+                  <span className="sgpf-bullet-dot" />
+                  <p className="text-sm leading-relaxed text-slate-200">{item}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-white/20 hover:bg-white/[0.05]">
+          <div className="sgpf-panel sgpf-panel-glow p-8 md:p-10">
             <h2 className="text-lg font-semibold text-white">What we’ve built so far</h2>
-            <div className="mt-5 grid gap-2">
+            <div className="mt-6 divide-y divide-white/10 overflow-hidden rounded-[22px] border border-white/10 bg-black/25">
               {builtSoFar.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/10 bg-black/25 px-4 py-3 text-sm text-slate-200"
-                >
-                  {item}
+                <div key={item} className="sgpf-bullet px-6 py-5">
+                  <span className="sgpf-bullet-dot" />
+                  <p className="text-sm leading-relaxed text-slate-200">{item}</p>
                 </div>
               ))}
             </div>
